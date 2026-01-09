@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>My Blog | Contact Us</title>
+		<link
+			rel="stylesheet"
+			href="{% static 'style.css' %}"
+		/>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">My Blog</div>
+				<ul>
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li>
+						<a
+							href="{% url 'about' %}"
+							style="color: #38bdf8"
+						>
+							About
+						</a>
+					</li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li>
+						<a
+							href="{% url 'contact' %}"
+							style="color: #38bdf8"
+							>Contact</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="container">
+			<section class="hero">
+				<h1>Contact</h1>
+				<p>
+					Have a question, proposal, or idea? Reach out—we respond
+					quickly and clearly.
+				</p>
+			</section>
+
+			<section class="posts">
+				<div class="post">
+					<h3>Email</h3>
+					<p>contact@mysite.com</p>
+				</div>
+
+				<div class="post">
+					<h3>Location</h3>
+					<p>Remote-first, serving globally</p>
+				</div>
+
+				<div class="post">
+					<h3>Business Inquiries</h3>
+					<p>
+						Partnerships, consulting, or long-term collaborations
+						are welcome.
+					</p>
+					<a href="mailto:contact@mysite.com">Send an Email →</a>
+				</div>
+			</section>
+		</main>
+
+		<footer>© 2026 MySite. All rights reserved.</footer>
+	</body>
+</html>
