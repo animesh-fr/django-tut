@@ -1,3 +1,4 @@
+{% load static tailwind_tags %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -10,23 +11,69 @@
       Default Title 
     {% endblock %}
   </title>
-  <link rel="stylesheet" href="{%static 'style.css' %}">
+  {% comment %} <link rel="stylesheet" href="{%static 'style.css' %}"> {% endcomment %}
+	{% tailwind_css %}
 </head>
-<body>
-  <header>
-			<nav>
-				<div class="logo">My Blog</div>
-				<ul>
-					<li><a href="{% url 'home' %}">Home</a></li>
-					<li><a href="{% url 'all_chai' %}">Chai</a></li>
-					<li><a href="{% url 'about' %}">About</a></li>
-					<li><a href="{% url 'contact' %}">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-    
+<body class="m-0 font-sans bg-[#0b1020] text-slate-200">
+	<header class="bg-slate-950 border-b border-slate-800 px-8 py-4">
+		<nav class="flex items-center justify-between max-w-5xl mx-auto">
+			<div class="text-slate-50 text-xl font-bold">
+				My Blog
+			</div>
+
+		<ul class="flex space-x-6">
+			<li>
+				<a
+					href="{% url 'home' %}"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+				>
+					Home
+				</a>
+			</li>
+
+			<li>
+				<a
+					href="{% url 'all_chai' %}"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+				>
+					Chai
+				</a>
+			</li>
+
+			<li>
+				<a
+					href="{% url 'about' %}"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+				>
+					About
+				</a>
+			</li>
+
+			<li>
+				<a
+					href="{% url 'contact' %}"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+				>
+					Contact
+				</a>
+			</li>
+			<li>
+				<a
+					href="{% url 'admin:index' %}"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+				>
+					Admin
+				</a>
+			</li>
+
+		</ul>
+	</nav>
+</header>
     {% block content %}{% endblock %}
-		<!-- Footer -->
-		<footer>© 2026 My Blog. All rights reserved.</footer>
+	<!-- Footer -->
+<footer
+	class="bg-[#020617] text-[#64748b] text-center px-4 py-[15px] mt-10 text-sm border-t border-[#1e293b]">
+	© 2026 My Blog. All rights reserved.
+</footer>
 </body>
 </html>

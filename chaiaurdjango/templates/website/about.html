@@ -2,40 +2,51 @@
 
 {% block  title %} About Us | My Blog{% endblock  %}
 {% block content %}
-		<main class="container">
-			<section class="hero">
-				<h1>About Us</h1>
-				<p>
-					We build focused, minimal, and scalable digital experiences
-					with an emphasis on performance, clarity, and long-term
-					maintainability.
-				</p>
-			</section>
+<main class="max-w-5xl mx-auto mt-8 px-5">
+	<!-- HERO -->
+	<section class="bg-slate-950 border border-slate-800 rounded-md p-8 mb-8">
+		<h1 class="text-slate-50 text-2xl font-semibold mb-2">
+			About Us
+		</h1>
+		<p class="text-slate-400">
+			We build focused, minimal, and scalable digital experiences
+			with an emphasis on performance, clarity, and long-term
+			maintainability.
+		</p>
+	</section>
 
-			<section class="posts">
-				<div class="post">
-					<h3>Our Mission</h3>
-					<p>
-						To create software that is intuitive, fast, and
-						reliable—without unnecessary complexity.
-					</p>
-				</div>
+	<!-- INFO CARDS -->
+	<section class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
+			<h3 class="text-slate-100 text-lg font-medium mb-1">
+				Our Mission
+			</h3>
+			<p class="text-slate-400">
+				To create software that is intuitive, fast, and
+				reliable—without unnecessary complexity.
+			</p>
+		</div>
 
-				<div class="post">
-					<h3>Our Approach</h3>
-					<p>
-						We favor clean architecture, thoughtful UX, and modern
-						tooling that scales with your business.
-					</p>
-				</div>
+		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
+			<h3 class="text-slate-100 text-lg font-medium mb-1">
+				Our Approach
+			</h3>
+			<p class="text-slate-400">
+				We favor clean architecture, thoughtful UX, and modern
+				tooling that scales with your business.
+			</p>
+		</div>
 
-				<div class="post">
-					<h3>Why We Exist</h3>
-					<p>
-						Because most products fail not due to lack of features,
-						but lack of focus.
-					</p>
-				</div>
-			</section>
-		</main>
+		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
+			<h3 class="text-slate-100 text-lg font-medium mb-1">
+				Why We Exist
+			</h3>
+			<p class="text-slate-400">
+				Because most products fail not due to lack of features,
+				but lack of focus.
+			</p>
+		</div>
+	</section>
+</main>
+
 {% endblock  %}

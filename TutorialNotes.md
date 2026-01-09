@@ -58,6 +58,20 @@ Worked with jinja template and how to create master layout and programitically u
 
 ## Day 5
 
+### Adding Tailwind to Django and super user.
+
+In order to work with Tailwind, we first need to install django-taliwind package.
+
+```
+pip install 'django-tailwind[reload]'
+```
+
+sometimes, if we have used uv package, for the project creation, we need to upgrade our pip,
+
+```
+python -m ensurepip --upgrade
+```
+
 ## Day 6
 
 ## Day 7
@@ -67,6 +81,10 @@ Worked with jinja template and how to create master layout and programitically u
 ## Day 9
 
 ## Day 10
+
+```
+
+```
 
 ```
 
