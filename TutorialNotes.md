@@ -74,6 +74,14 @@ python -m ensurepip --upgrade
 
 ## Day 6
 
+### Worked on models.
+
+### Worked on sending and receiving requests
+
+### Implementing views and moving from one page to another page
+
+### Howe we get parameters from the URL
+
 ## Day 7
 
 ## Day 8

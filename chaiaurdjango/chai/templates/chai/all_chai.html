@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
-{% block title %} Chai | My Blog {% endblock  %}
+{% block title %} Chai | My Blog {% endblock %}
+
 {% block content %}
 <main class="max-w-5xl mx-auto mt-8 px-5">
 	<!-- HERO -->
@@ -8,158 +9,50 @@
 		<h1 class="text-slate-50 text-2xl font-semibold mb-2">
 			Our Tea Collection
 		</h1>
-		<p class="text-slate-400">
-			Discover a refined selection of teas sourced from the finest
-			tea gardens around the world.
+		<p class="text-slate-400 text-justify">
+			Discover a refined selection of teas sourced from the finest tea gardens around the world. Each blend is carefully crafted to highlight its unique character—ranging from bold and invigorating to smooth and calming. Whether you prefer classic flavors or adventurous infusions, our collection offers a perfect cup for every mood, moment, and palate.		
 		</p>
 	</section>
 
 	<!-- TEA CARDS -->
-	<section class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Assam Black Tea
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Bold and malty black tea, ideal for a strong morning cup.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Black Tea
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> India
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €6.50 / 100g
-			</p>
-		</div>
+	<section class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+		{% for chai in chais %}
+		<a href="{% url 'chai_detail' chai.id %}">
 
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Darjeeling First Flush
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Light, floral tea harvested in early spring.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Black Tea
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> India
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €9.00 / 100g
-			</p>
+			<div class="bg-slate-950 border border-slate-800 rounded-md overflow-hidden">
+				
+				<!-- IMAGE -->
+				<img
+				src="{{ chai.image.url }}"
+				alt="{{ chai.name }}"
+				class="w-full h-56 object-cover"
+				/>
+				
+				<!-- CONTENT -->
+				<div class="p-5">
+					<h3 class="text-slate-100 text-xl font-semibold mb-2">
+						{{ chai.name }}
+					</h3>
+					
+					<div class="flex justify-between text-sm text-slate-400">
+						<p>
+							<span class="text-slate-300 font-medium">Category:</span>
+							{{ chai.get_type_display }}
+					</p>
+					<p>
+						<span class="text-slate-300 font-medium">Added:</span>
+						{{ chai.date_added|date:"M d, Y" }}
+					</p>
+				</div>
+				<button type="button" class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-900 px-5 py-1.5 text-sm font-medium text-slate-200 hover:border-sky-400 hover:text-sky-100 hover:bg-slate-800 transition-colors cursor-pointer mt-5">
+					{{ chai.id }} - {{ chai.get_type_display }}
+				</button>
+			</div>
 		</div>
+	</a>
+	{% endfor %}
 
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Sencha Green Tea
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Fresh and grassy Japanese green tea rich in antioxidants.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Green Tea
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> Japan
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €8.00 / 100g
-			</p>
-		</div>
-
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Jasmine Green Tea
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Delicately scented green tea infused with jasmine flowers.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Green Tea
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> China
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €7.50 / 100g
-			</p>
-		</div>
-
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Chamomile Herbal Tea
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Caffeine-free herbal infusion with calming properties.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Herbal
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> Egypt
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €5.50 / 100g
-			</p>
-		</div>
-
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Masala Chai
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Spiced Indian tea blend with warming aromas.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Spiced Tea
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> India
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €7.00 / 100g
-			</p>
-		</div>
-
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Oolong Tea
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Semi-oxidized tea with a smooth, complex flavor.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Oolong
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> Taiwan
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €10.00 / 100g
-			</p>
-		</div>
-
-		<div class="bg-slate-950 border border-slate-800 rounded-md p-5">
-			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Peppermint Tea
-			</h3>
-			<p class="text-slate-400 mb-2">
-				Refreshing herbal tea with a cool, clean finish.
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Category:</strong> Herbal
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Origin:</strong> Morocco
-			</p>
-			<p class="text-slate-400 text-sm">
-				<strong class="text-slate-300">Price:</strong> €5.00 / 100g
-			</p>
-		</div>
 	</section>
+
 </main>
-		
-{% endblock  %}
+{% endblock %}

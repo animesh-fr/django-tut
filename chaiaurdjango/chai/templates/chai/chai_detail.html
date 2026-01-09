@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %} {{ chai.name }} | My Blog {% endblock %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto mt-8 px-5">
+
+	<!-- DETAIL CARD -->
+	<section class="bg-slate-950 border border-slate-800 rounded-md overflow-hidden">
+
+		<div class="grid grid-cols-1 md:grid-cols-2">
+
+			<!-- IMAGE (LEFT) -->
+			<div class="h-full">
+				<img
+					src="{{ chai.image.url }}"
+					alt="{{ chai.name }}"
+					class="w-full h-full max-h-[420px] object-cover"
+				/>
+			</div>
+
+			<!-- CONTENT (RIGHT) -->
+			<div class="p-6 flex flex-col justify-between">
+
+				<div class="space-y-4">
+					<section class="bg-slate-950 border border-slate-800 rounded-md p-4 pt-2 mb-">
+						<h1 class="text-slate-50 text-3xl font-semibold mb-1">
+							{{ chai.name }}
+						</h1>
+						<p class="text-slate-400">
+							{{ chai.description }}
+						</p>
+					</section>
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-400">
+
+						<p>
+							<span class="text-slate-300 font-medium">Category:</span>
+							{{ chai.get_type_display }}
+						</p>
+
+						<p>
+							<span class="text-slate-300 font-medium">Price:</span>
+							<span class="text-sky-400 font-semibold">€{{ chai.price }}</span>
+						</p>
+
+						<p>
+							<span class="text-slate-300 font-medium">Added on:</span>
+							{{ chai.date_added|date:"M d, Y" }}
+						</p>
+
+						<p>
+							<span class="text-slate-300 font-medium">Product ID:</span>
+							{{ chai.id }}
+						</p>
+
+					</div>
+
+				</div>
+
+				<!-- ACTION -->
+				<button
+					type="button"
+					class="mt-6 inline-flex w-full items-center justify-center rounded-md border border-slate-700 bg-slate-900 px-6 py-2 text-sm font-medium text-slate-200 hover:border-sky-400 hover:text-sky-100 hover:bg-slate-800 active:scale-[0.98] transition-all"
+				>
+					Add to Cart
+				</button>
+
+			</div>
+
+		</div>
+
+	</section>
+<div class="flex justify-center">
+	<a
+		href="{% url 'all_chai' %}"
+		class="mt-6 text-sm text-slate-400 hover:text-sky-400 transition-colors bg-gray-800 border-gray-800 border px-4 py-2 rounded-3xl hover:shadow-2xs hover:animate-pulse shadow-white "
+	>
+		← Back to Tea Collection
+	</a>
+</div>
+</main>
+{% endblock %}
