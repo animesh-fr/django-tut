@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+	Homepage | My Blog
+{% endblock title %} 
+
+{% block content %}
+<main class="container">
+			<section class="hero">
+				<h1>Welcome to My Blog</h1>
+				<p>
+					This is a simple blog website where I share articles,
+					tutorials, and thoughts.
+				</p>
+			</section>
+
+			<section class="posts">
+				<article class="post">
+					<h3>Blog Post Title 1</h3>
+					<p>Short description of the blog post goes here.</p>
+					<a href="#">Read more →</a>
+				</article>
+
+				<article class="post">
+					<h3>Blog Post Title 2</h3>
+					<p>Short description of the blog post goes here.</p>
+					<a href="#">Read more →</a>
+				</article>
+
+				<article class="post">
+					<h3>Blog Post Title 3</h3>
+					<p>Short description of the blog post goes here.</p>
+					<a href="#">Read more →</a>
+				</article>
+			</section>
+		</main>
+{% endblock  %}

@@ -1,35 +1,7 @@
-{% load static %} <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>About Us</title>
-		<link
-			rel="stylesheet"
-			href="{% static 'style.css'%}"
-		/>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<div class="logo">MySite</div>
-				<ul>
-					<li><a href="{% url 'home' %}">Home</a></li>
-					<li>
-						<a
-							href="{% url 'about' %}"
-							style="color: #38bdf8"
-							>About</a
-						>
-					</li>
-					<li><a href="{% url 'contact' %}">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+{% extends "layout.html" %}
 
+{% block  title %} About Us | My Blog{% endblock  %}
+{% block content %}
 		<main class="container">
 			<section class="hero">
 				<h1>About Us</h1>
@@ -66,7 +38,4 @@
 				</div>
 			</section>
 		</main>
-
-		<footer>© 2026 MySite. All rights reserved.</footer>
-	</body>
-</html>
+{% endblock  %}
