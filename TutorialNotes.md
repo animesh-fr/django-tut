@@ -84,24 +84,14 @@ python -m ensurepip --upgrade
 
 ## Day 7
 
+### Changing database from mySQL/SQLLite/Postgress
+
+### Discuss about relations - 1:1, 1:many, Many:1, Many:Many
+
+### Updating Admin Interface
+
 ## Day 8
 
+### Discuss about Forms
+
 ## Day 9
-
-## Day 10
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
