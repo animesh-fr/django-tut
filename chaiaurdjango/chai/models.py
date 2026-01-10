@@ -35,8 +35,18 @@ class RatingChoices(models.IntegerChoices):
   
 # 1 : MANY
 class ChaiReview(models.Model):
-  chai = models.ForeignKey(ChaiVariety, on_delete = models.CASCADE, related_name="chai_reviews")
-  user = models.ForeignKey(User, on_delete= models.CASCADE, related_name= "user")
+  chai = models.ForeignKey(
+    ChaiVariety, 
+    on_delete = models.CASCADE,
+    related_name="chai_reviews"
+    )
+  
+  user = models.ForeignKey(
+    User, 
+    on_delete= models.CASCADE,
+    related_name= "chai_reviews"
+    )
+  
   reviews = models.IntegerField(choices= RatingChoices.choices)
   comment = models.TextField(blank=True)
   created_at = models.DateTimeField(default=timezone.now)
@@ -49,7 +59,7 @@ class ChaiReview(models.Model):
 class Store(models.Model):
   name= models.CharField(max_length=100)
   location= models.CharField(max_length=100)
-  chai_varities = models.ManyToManyField(ChaiVariety, related_name='stores')
+  chai_varieties = models.ManyToManyField(ChaiVariety, related_name='stores')
 
   def __str__(self):
     return self.name
@@ -63,5 +73,5 @@ class ChaiCertificate(models.Model):
   valid_untill = models.DateTimeField()
 
   def __str__(self):
-    return f'Certificate for {self.name.chai}'
+    return f'Certificate for {self.chai.name}'
    

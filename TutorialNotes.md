@@ -94,4 +94,8 @@ python -m ensurepip --upgrade
 
 ### Discuss about Forms
 
+### Created new form and manupulated data inside it.
+
+### Applied filters to store and how data works inside form.
+
 ## Day 9

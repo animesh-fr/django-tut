@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %} Chai Store | My Blog {% endblock %}
+
+{% block content %}
+<main class="max-w-4xl mx-auto mt-8 px-5 space-y-8">
+
+  <!-- SEARCH FORM -->
+  <section class="bg-slate-950 border border-slate-800 rounded-md p-6">
+  <form method="POST" class="flex items-center gap-4">
+    {% csrf_token %}
+
+    <!-- LABEL -->
+    <label
+      for="{{ form.chai_variety.id_for_label }}"
+      class="shrink-0 text-sm font-medium text-slate-300"
+    >
+      {{ form.chai_variety.label }}
+    </label>
+
+    <!-- DROPDOWN (takes remaining space) -->
+    <div class="flex-1">
+      {{ form.chai_variety }}
+
+      {% if form.chai_variety.errors %}
+        <p class="text-red-400 text-sm mt-1">
+          {{ form.chai_variety.errors|striptags }}
+        </p>
+      {% endif %}
+    </div>
+
+    <!-- BUTTON -->
+    <button
+      type="submit"
+      class="h-[42px] shrink-0 inline-flex items-center justify-center rounded-md bg-sky-500 px-6 text-sm font-semibold text-slate-950 hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-colors cursor-pointer"
+    >
+      Search
+    </button>
+  </form>
+</section>
+
+
+  <!-- RESULTS -->
+  <section class="bg-slate-950 border border-slate-800 rounded-md p-6">
+    <h2 class="text-slate-100 text-xl font-semibold mb-6">
+      Stores Available
+    </h2>
+
+    {% if stores %}
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {% for store in stores %}
+          <div
+            class="rounded-md border border-slate-800 bg-slate-900 p-5 hover:border-sky-400 transition-colors"
+          >
+            <h3 class="text-slate-100 font-semibold text-lg mb-1">
+              {{ store.name }}
+            </h3>
+
+            <p class="text-slate-400 text-sm mb-4">
+              {{ store.location }}
+            </p>
+
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>Available Chai</span>
+              <span class="rounded-full bg-slate-800 px-2 py-0.5 text-sky-400 font-medium">
+                {{ store.chai_varieties.count }}
+              </span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-slate-400 text-sm">
+        No stores found for the selected chai variety.
+      </p>
+    {% endif %}
+  </section>
+
+</main>
+{% endblock %}

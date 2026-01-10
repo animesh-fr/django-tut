@@ -13,7 +13,7 @@ class ChaiVarietyAdmin(admin.ModelAdmin):
 
 class StoreAdmin(admin.ModelAdmin):
   list_display = ('name','location')
-  filter_horizontal = ('chai_varities',)
+  filter_horizontal = ('chai_varieties',)
 
 class ChaiCertificateAdmin(admin.ModelAdmin):
   list_display = ('chai', 'certificate_number')
