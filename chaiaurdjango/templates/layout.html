@@ -17,15 +17,17 @@
 <body class="m-0 font-sans bg-[#0b1020] text-slate-200">
 	<header class="bg-slate-950 border-b border-slate-800 px-8 py-4">
 		<nav class="flex items-center justify-between max-w-5xl mx-auto">
-			<div class="text-slate-50 text-xl font-bold">
-				My Blog
-			</div>
+			<a href="/">
+				<div class="text-slate-50 text-xl font-bold">
+					ChaiVerse
+				</div>
+			</a>
 
 		<ul class="flex space-x-6">
 			<li>
 				<a
 					href="{% url 'home' %}"
-					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+					class="text-slate-400 text-sm hover:text-sky-400  hover:border-b hover:border-b-gray-300 transition-colors"
 				>
 					Home
 				</a>
@@ -34,16 +36,23 @@
 			<li>
 				<a
 					href="{% url 'all_chai' %}"
-					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors  hover:border-b hover:border-b-gray-300"
 				>
 					Chai
 				</a>
 			</li>
-
+			<li>
+				<a
+					href="{% url 'chai_store' %}"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors  hover:border-b hover:border-b-gray-300"
+				>
+					Stores
+				</a>
+			</li>
 			<li>
 				<a
 					href="{% url 'about' %}"
-					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors  hover:border-b hover:border-b-gray-300"
 				>
 					About
 				</a>
@@ -52,23 +61,15 @@
 			<li>
 				<a
 					href="{% url 'contact' %}"
-					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors  hover:border-b hover:border-b-gray-300"
 				>
 					Contact
 				</a>
 			</li>
 			<li>
 				<a
-					href="{% url 'chai_store' %}"
-					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
-				>
-					Stores
-				</a>
-			</li>
-			<li>
-				<a
 					href="{% url 'admin:index' %}"
-					class="text-slate-400 text-sm hover:text-sky-400 transition-colors"
+					class="text-slate-400 text-sm hover:text-sky-400 transition-colors  hover:border-b hover:border-b-gray-300"
 				>
 					Admin
 				</a>

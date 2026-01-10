@@ -6,63 +6,70 @@
 
 {% block content %}
 <main class="max-w-5xl mx-auto mt-8 px-5">
+
 	<!-- HERO -->
 	<section class="bg-slate-950 border border-slate-800 rounded-md p-8 mb-8">
 		<h1 class="text-slate-50 text-2xl font-semibold mb-2">
-			Welcome to My Blog
+			Discover the Art of Chai
 		</h1>
 		<p class="text-slate-400">
-			This is a simple blog website where I share articles,
-			tutorials, and thoughts.
+			Explore a curated collection of premium teas crafted with tradition,
+			flavor, and authenticity. From classic blends to modern infusions,
+			find your perfect cup.
 		</p>
 	</section>
 
-	<!-- POSTS GRID -->
+	<!-- FEATURED TEAS -->
 	<section class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
 		<article class="bg-slate-950 border border-slate-800 rounded-md p-5">
 			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Blog Post Title 1
+				Masala Chai
 			</h3>
 			<p class="text-slate-400 mb-3">
-				Short description of the blog post goes here.
+				A bold Indian classic brewed with aromatic spices for a rich,
+				warming experience.
 			</p>
 			<a
-				href="#"
+				href="{% url 'all_chai' %}"
 				class="text-sky-400 text-sm hover:underline"
 			>
-				Read more →
+				View details →
 			</a>
 		</article>
 
 		<article class="bg-slate-950 border border-slate-800 rounded-md p-5">
 			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Blog Post Title 2
+				Ginger Tea
 			</h3>
 			<p class="text-slate-400 mb-3">
-				Short description of the blog post goes here.
+				A refreshing and soothing blend known for its warmth and natural
+				health benefits.
 			</p>
 			<a
-				href="#"
+				href="{% url 'all_chai' %}"
 				class="text-sky-400 text-sm hover:underline"
 			>
-				Read more →
+				View details →
 			</a>
 		</article>
 
 		<article class="bg-slate-950 border border-slate-800 rounded-md p-5">
 			<h3 class="text-slate-100 text-lg font-medium mb-1">
-				Blog Post Title 3
+				Elaichi Tea
 			</h3>
 			<p class="text-slate-400 mb-3">
-				Short description of the blog post goes here.
+				Smooth and fragrant cardamom-infused tea with a delicate,
+				comforting flavor.
 			</p>
 			<a
-				href="#"
+				href="{% url 'all_chai' %}"
 				class="text-sky-400 text-sm hover:underline"
 			>
-				Read more →
+				View details →
 			</a>
 		</article>
+
 	</section>
 </main>
 
